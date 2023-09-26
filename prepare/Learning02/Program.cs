@@ -20,7 +20,7 @@ class Program
         Resume myResume = new Resume();
         myResume._name = "John Doe";
         
-        // Add job instances to the Resume job list.
+        // Add job instances to the Resume jobs list.
         myResume._jobs.Add(job1);
         myResume._jobs.Add(job2);
 
