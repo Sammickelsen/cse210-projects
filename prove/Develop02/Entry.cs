@@ -12,6 +12,7 @@ public class Entry
 
     public void DisplayEntry()
     {
+        //Display the Entry to the User
         Console.WriteLine(DateTime);
         Console.WriteLine(Prompt);
         Console.WriteLine(Content);
