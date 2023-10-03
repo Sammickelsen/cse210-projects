@@ -1,7 +1,9 @@
+using System.IO;
+
 public class Journal
 {
     public List<Entry> JournalList = new List<Entry>();
-    Entry newEntry = new Entry();
+    
 
     public Journal()
     {
@@ -16,18 +18,33 @@ public class Journal
         }
     }
 
-    public void SaveJournal(List<string> JournalList)
+    public void SaveJournal(List<Entry> JournalList)
     {
+        string fileName = "myFile.txt";
 
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            Console.WriteLine("Saving to File...");
+
+            foreach (Entry e in JournalList)
+            {
+                outputFile.WriteLine(e.DateTime);
+                outputFile.WriteLine(e.Prompt);
+                outputFile.WriteLine(e.Content);
+            }
+
+            Console.WriteLine("Save Complete!");
+        }
     }
 
-    public string LoadJournal()
+    public List<Entry> LoadJournal()
     {
-        return "hello";
+        return JournalList;
     }
 
     public void AddEntry()
     {
+        Entry newEntry = new Entry();
         PromptGenerator newPrompt = new PromptGenerator();
         Console.WriteLine("Please respond to your prompt: ");
         newEntry.Prompt = newPrompt.GeneratePrompt();

@@ -28,7 +28,7 @@ class Program
             }
             else if (choice == "3")
             {
-                //Journal.SaveJournal
+                myJournal.SaveJournal(myJournal.JournalList);
             }
             else if (choice == "4")
             {
