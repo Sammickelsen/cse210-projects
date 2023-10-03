@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         bool resume = true;
-
+        Journal myJournal = new Journal();
         do
         {
             Console.WriteLine("Please choose an option below:");
@@ -20,11 +20,11 @@ class Program
 
             if (choice == "1")
             {
-                //Journal.AddEntry
+                myJournal.AddEntry();
             }
             else if (choice == "2")
             {
-                //Journal.DisplayJournal
+                myJournal.DisplayJournal();
             }
             else if (choice == "3")
             {
@@ -37,6 +37,10 @@ class Program
             else if (choice == "5")
             {
                 resume = false;
+            }
+            else
+            {
+                Console.WriteLine("Please input a valid option. (1-5)");
             }
         } while (resume == true);
     }

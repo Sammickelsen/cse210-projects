@@ -15,6 +15,7 @@ public class Entry
         Console.WriteLine(DateTime);
         Console.WriteLine(Prompt);
         Console.WriteLine(Content);
+        Console.WriteLine("");
     }
 
 }
