@@ -28,9 +28,10 @@ public class Journal
 
             foreach (Entry e in JournalList)
             {
-                outputFile.WriteLine(e.DateTime);
-                outputFile.WriteLine(e.Prompt);
-                outputFile.WriteLine(e.Content);
+                outputFile.WriteLine($"{e.DateTime}|");
+                outputFile.WriteLine($"{e.Prompt}|");
+                outputFile.WriteLine($"{e.Content}|");
+                outputFile.WriteLine("|");
             }
 
             Console.WriteLine("Save Complete!");
