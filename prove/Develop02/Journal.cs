@@ -28,10 +28,7 @@ public class Journal
 
             foreach (Entry e in JournalList)
             {
-                outputFile.WriteLine($"{e.DateTime}|");
-                outputFile.WriteLine($"{e.Prompt}|");
-                outputFile.WriteLine($"{e.Content}|");
-                outputFile.WriteLine("|");
+                outputFile.WriteLine($"{e.DateTime}|{e.Prompt}|{e.Content}");
             }
 
             Console.WriteLine("Save Complete!");
@@ -40,7 +37,29 @@ public class Journal
 
     public List<Entry> LoadJournal()
     {
-        return JournalList;
+        List<Entry> loadJournal = new List<Entry>();
+        string filename = "myFile.txt";
+
+        string[] lines = System.IO.File.ReadAllLines(filename);
+
+        foreach (string line in lines)
+        {
+            // Line looks like this: "{e.DateTime}|{e.Prompt}|{e.Content}"
+            string[] parts = line.Split("|");
+
+            // parts[0] - e.DateTime
+            // parts[1] - e.Prompt
+            // parts[2] - e.Content
+
+            Entry newEntry = new Entry();
+            newEntry.DateTime = parts[0];
+            newEntry.Prompt = parts[1];
+            newEntry.Prompt = parts[2];
+
+            loadJournal.Add(newEntry);
+        }
+
+        return loadJournal;
     }
 
     public void AddEntry()
