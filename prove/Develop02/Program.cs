@@ -32,7 +32,7 @@ class Program
             }
             else if (choice == "4")
             {
-                //Journal.LoadJournal
+                myJournal.JournalList = myJournal.LoadJournal();
             }
             else if (choice == "5")
             {
