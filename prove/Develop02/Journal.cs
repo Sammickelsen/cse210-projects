@@ -22,8 +22,9 @@ public class Journal
 
     public void SaveJournal(List<Entry> JournalList)
     {
-        // Save the journal object to a file called "myFile.txt"
-        string fileName = "myFile.txt";
+        // Save the journal object to a file created by the user.
+        Console.WriteLine("Please input the name of the file: (.txt)");
+        string fileName = Console.ReadLine();
 
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
@@ -48,7 +49,8 @@ public class Journal
         List<Entry> loadJournal = new List<Entry>();
         
         // Call the file that needs to be pulled from.
-        string filename = "myFile.txt";
+        Console.WriteLine("Please input the name of the file: (.txt)");
+        string filename = Console.ReadLine();
 
         // Use the .ReadAllLines functionality to read the file line
         // by line into an array
