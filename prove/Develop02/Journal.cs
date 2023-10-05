@@ -70,7 +70,7 @@ public class Journal
             Entry newEntry = new Entry();
             newEntry.DateTime = parts[0];
             newEntry.Prompt = parts[1];
-            newEntry.Prompt = parts[2];
+            newEntry.Content = parts[2];
 
             // Add new entry to the journal list.
             loadJournal.Add(newEntry);
