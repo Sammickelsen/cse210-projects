@@ -27,23 +27,27 @@ class Program
                 // Call the AddEntry Method
                 // Allows the user to add a written entry to the journal.
                 myJournal.AddEntry();
+                Console.WriteLine("");
             }
             else if (choice == "2")
             {
                 // Call the DisplayJournal Method
                 // Displays all previous entries to the user.
                 myJournal.DisplayJournal();
+                Console.WriteLine("");
             }
             else if (choice == "3")
             {
                 // Call the SaveJournal method
                 myJournal.SaveJournal(myJournal.JournalList);
+                Console.WriteLine("");
             }
             else if (choice == "4")
             {
                 // Call the LoadJournal Method and replace myJournal
                 // with the loaded journal.
                 myJournal.JournalList = myJournal.LoadJournal();
+                Console.WriteLine("");
             }
             else if (choice == "5")
             {
