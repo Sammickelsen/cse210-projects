@@ -18,6 +18,7 @@ class Program
             Console.WriteLine("4. Load the journal from a file");
             Console.WriteLine("5. End");
             string choice = Console.ReadLine();
+            Console.WriteLine("");
 
             
 
