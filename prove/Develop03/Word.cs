@@ -14,10 +14,22 @@ public class Word
         // Create _blankWord by switching each original letter to
         // an underscore.
         int length = word.Length;
-        for (int i = 0; i < length; i++)
+        if (word.EndsWith('.') || word.EndsWith(',') || word.EndsWith(';'))
         {
-            _blankWord = _blankWord + "_";
+            for (int i = 0; i < (length - 1); i++)
+            {
+                _blankWord += "_";
+            }
+            _blankWord += word[length-1];
         }
+        else
+        {
+            for (int i = 0; i < length; i++)
+            {
+                _blankWord = _blankWord + "_";
+            }
+        }
+        
 
         // Set the _isHidden bool to false.
         IsHidden = false;
