@@ -24,7 +24,7 @@ class Program
 
        Scripture userScripture = new Scripture(scripRef, wordList);
 
-
+        //Set the basic program loop.
         do
         {
             Console.Clear();
@@ -36,7 +36,15 @@ class Program
 
             if (input == "")
             {
-                userScripture.HideWords();
+                if (userScripture.IsCompletelyHidden())
+                {
+                    continueLoop = false;
+                }
+                else
+                {
+                    userScripture.HideWords();
+                }
+                
             }
             else if (input.ToLower() == "q")
             {
