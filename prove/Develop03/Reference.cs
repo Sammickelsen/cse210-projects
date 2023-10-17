@@ -21,4 +21,15 @@ public class Reference
         _startVerse = startVerse;
         _endVerse = endVerse;
     }
+
+    public string CreateReference()
+    {
+        string strReference = $"{_book} {_chapter}:{_startVerse}";
+        if (_endVerse != null)
+        {
+            strReference = strReference + $"-{_endVerse}";
+        }
+        
+        return strReference;
+    }
 }
