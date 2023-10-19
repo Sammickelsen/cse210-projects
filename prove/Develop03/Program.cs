@@ -9,7 +9,6 @@ class Program
     static void Main(string[] args)
     {
         //Create scripture and reference variables to pull from.
-        string scripRef =  "Ether 12:27";
         string scripContent = "And if men come unto me I will show unto them their weakness." +
       " I give unto men weakness that they may be humble; and my grace is sufficient for all men that humble themselves before me;" +
       " for if they humble themselves before me, and have faith in me, then will I make weak things become strong unto them.";
@@ -24,8 +23,7 @@ class Program
         }
 
         //Create Reference
-        var referenceList = scripRef.Split(' ', ':', '-');
-        Reference userReference = new Reference(referenceList[0], referenceList[1], referenceList[2]);
+        Reference userReference = new Reference("Ether", "12", "27");
 
         // Create Scripture object.
         Scripture userScripture = new Scripture(userReference.CreateReference(), wordList);
