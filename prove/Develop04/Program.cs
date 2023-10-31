@@ -6,10 +6,6 @@ class Program
     {
         bool loopControl = true;
 
-        Breathe breatheActivity = new Breathe();
-        Listing listingActivity = new Listing();
-        Reflect reflectActivity = new Reflect();
-
         while (loopControl == true)
         {
             Console.WriteLine("Menu Options:");
@@ -22,16 +18,19 @@ class Program
 
             if (response == "1")
             {
+                Breathe breatheActivity = new Breathe();
                 breatheActivity.StartMessage();
                 breatheActivity.EndMessage();
             }
             else if (response == "2")
             {
+                Reflect reflectActivity = new Reflect();
                 reflectActivity.StartMessage();
                 reflectActivity.EndMessage();
             }
             else if (response == "3")
             {
+                Listing listingActivity = new Listing();
                 listingActivity.StartMessage();
                 listingActivity.EndMessage();
             }
