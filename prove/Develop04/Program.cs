@@ -6,6 +6,12 @@ class Program
     {
         bool loopControl = true;
 
+        Breathe breatheActivity = new Breathe();
+
+        Console.WriteLine(breatheActivity.StartMessage);
+        Console.WriteLine(breatheActivity.EndMessage);
+
+
         while (loopControl = true)
         {
             Console.WriteLine("Menu Options:");
