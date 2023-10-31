@@ -9,6 +9,25 @@ public class Reflect
     {
         _promptList = prompts;
         _questionList = questions;
+    }
 
+    public string GetPrompt()
+    {
+
+    }
+
+    public string GetQuestion()
+    {
+
+    }
+
+    public void DisplayQuestion()
+    {
+
+    }
+
+    public void DisplayPrompt()
+    {
+        
     }
 }
