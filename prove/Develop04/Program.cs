@@ -8,6 +8,7 @@ class Program
 
         while (loopControl == true)
         {
+            Console.Clear();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("  1. Start Breathing Activity");
             Console.WriteLine("  2. Start Reflecting Activity");
@@ -20,6 +21,7 @@ class Program
             {
                 Breathe breatheActivity = new Breathe();
                 breatheActivity.StartMessage();
+                breatheActivity.InOutLoop();
                 breatheActivity.EndMessage();
             }
             else if (response == "2")
