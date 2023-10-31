@@ -5,11 +5,10 @@ public class Activity
     private int _activityDuration;
     public int Count;
 
-    public Activity(string name, string desc, int duration)
+    public Activity(string name, string desc)
     {
         _activityName = name;
         _activityDescription = desc;
-        _activityDuration = duration;
     }
 
     public void EndMessage()
@@ -19,7 +18,13 @@ public class Activity
 
     public void StartMessage()
     {
-
+        Console.Clear();
+        Console.WriteLine($"Welcome to the {_activityName} Activity");
+        Console.WriteLine();
+        Console.WriteLine(_activityDescription);
+        Console.WriteLine();
+        Console.Write("How long, in seconds, would you like for your session?");
+        _activityDuration = Console.ReadLine();
     }
 
     public void Countdown(int count)

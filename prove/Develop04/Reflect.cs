@@ -5,7 +5,7 @@ public class Reflect
     private string _randPrompt;
     private string _randQuestion;
 
-    public Reflect(List<string> prompts, List<string> questions, string name, string desc, string duration) : base Activity(string name, string desc, string duration)
+    public Reflect(List<string> prompts, List<string> questions, string name, string desc) : base Activity(string name, string desc)
     {
         _promptList = prompts;
         _questionList = questions;
@@ -28,6 +28,6 @@ public class Reflect
 
     public void DisplayPrompt()
     {
-        
+
     }
 }

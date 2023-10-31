@@ -4,7 +4,7 @@ public class Listing
     private List<string> _prompts;
     private List<string> _userList;
 
-    public Listing(List<string> prompts, string name, string desc, string duration) : base Activity(name, desc, duration)
+    public Listing(List<string> prompts, string name, string desc) : base Activity(name, desc)
     {
         _prompts = prompts
     }
