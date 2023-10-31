@@ -11,7 +11,8 @@ public class Listing : Activity
 
     public string GetPrompt()
     {
-        return string prompt;
+        string prompt = "";
+        return prompt;
     }
 
     public void DisplayPrompt()
@@ -20,7 +21,8 @@ public class Listing : Activity
 
     public string RecordListing()
     {
-        return string listing;
+        string listing = "";
+        return listing;
     }
 
     public void DisplayList()

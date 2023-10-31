@@ -8,11 +8,11 @@ class Program
 
         Breathe breatheActivity = new Breathe();
 
-        Console.WriteLine(breatheActivity.StartMessage);
-        Console.WriteLine(breatheActivity.EndMessage);
+        breatheActivity.StartMessage();
+        breatheActivity.EndMessage();
 
 
-        while (loopControl = true)
+        while (loopControl == true)
         {
             Console.WriteLine("Menu Options:");
             Console.WriteLine("  1. Start Breathing Activity");
@@ -20,21 +20,21 @@ class Program
             Console.WriteLine("  3. Start Listing Activity");
             Console.WriteLine("  4. Quit");
             Console.Write("Select a choice from the menu: ");
-            int response = Console.ReadLine();
+            string response = Console.ReadLine();
 
-            if (response = 1)
+            if (response == "1")
             {
                 Console.WriteLine("Breathe Activity");
             }
-            else if (response = 2)
+            else if (response == "2")
             {
                 Console.WriteLine("Reflecting Activity");
             }
-            else if (response = 3)
+            else if (response == "3")
             {
                 Console.WriteLine("Listing Activity");
             }
-            else if (response = 4)
+            else if (response == "4")
             {
                 Console.WriteLine("Quitting...");
                 loopControl = false;
