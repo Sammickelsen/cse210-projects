@@ -1,4 +1,4 @@
-public class Listing
+public class Listing : Activity
 {
     private string _prompt;
     private List<string> _prompts;

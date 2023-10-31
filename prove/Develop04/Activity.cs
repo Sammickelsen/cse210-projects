@@ -32,8 +32,8 @@ public class Activity
         Console.WriteLine();
     }
 
-    public void Countdown(int count)
+    public void Countdown()
     {
-
+        
     }
 }

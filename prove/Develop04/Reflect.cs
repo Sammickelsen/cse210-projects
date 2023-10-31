@@ -1,4 +1,4 @@
-public class Reflect
+public class Reflect : Activity
 {
     private List<string> _promptList;
     private List<string> _questionList;
