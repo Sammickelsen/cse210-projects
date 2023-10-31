@@ -4,9 +4,9 @@ public class Listing : Activity
     private List<string> _prompts;
     private List<string> _userList;
 
-    public Listing(List<string> prompts, string name, string desc) : base(name, desc)
+    public Listing(string name = "Listing", string desc = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.") : base(name, desc)
     {
-        _prompts = prompts;
+ 
     }
 
     public string GetPrompt()

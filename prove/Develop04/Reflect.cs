@@ -5,10 +5,9 @@ public class Reflect : Activity
     private string _randPrompt;
     private string _randQuestion;
 
-    public Reflect(string[] prompts, string[] questions, string name, string desc) : base(name, desc)
+    public Reflect(string name = "Reflect", string desc = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.") : base(name, desc)
     {
-        _promptList = prompts;
-        _questionList = questions;
+
     }
 
     public void GetPrompt()

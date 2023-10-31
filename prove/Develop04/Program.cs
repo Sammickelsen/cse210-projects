@@ -7,10 +7,8 @@ class Program
         bool loopControl = true;
 
         Breathe breatheActivity = new Breathe();
-
-        breatheActivity.StartMessage();
-        breatheActivity.EndMessage();
-
+        Listing listingActivity = new Listing();
+        Reflect reflectActivity = new Reflect();
 
         while (loopControl == true)
         {
@@ -24,15 +22,18 @@ class Program
 
             if (response == "1")
             {
-                Console.WriteLine("Breathe Activity");
+                breatheActivity.StartMessage();
+                breatheActivity.EndMessage();
             }
             else if (response == "2")
             {
-                Console.WriteLine("Reflecting Activity");
+                reflectActivity.StartMessage();
+                reflectActivity.EndMessage();
             }
             else if (response == "3")
             {
-                Console.WriteLine("Listing Activity");
+                listingActivity.StartMessage();
+                listingActivity.EndMessage();
             }
             else if (response == "4")
             {
