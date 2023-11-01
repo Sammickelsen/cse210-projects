@@ -34,11 +34,24 @@ class Program
             {
                 Listing listingActivity = new Listing();
                 listingActivity.StartMessage();
+                listingActivity.ListLoop();
                 listingActivity.EndMessage();
             }
             else if (response == "4")
             {
-                Console.WriteLine("Quitting...");
+                
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.Clear();
+                    Console.Write("Quitting");
+                    Thread.Sleep(200);
+                    Console.Write('.');
+                    Thread.Sleep(200);
+                    Console.Write('.');
+                    Thread.Sleep(200);
+                    Console.Write('.');
+                    Thread.Sleep(200);
+                }
                 loopControl = false;
             }
             else
@@ -46,5 +59,7 @@ class Program
                 Console.WriteLine("Please input a valid answer (1-4)");
             }
         }
+
     }
+    
 }
