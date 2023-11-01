@@ -37,9 +37,9 @@ public class Activity
         Console.WriteLine();
     }
 
-    public void LoadingAnimation()
+    public void LoadingAnimation(int index = 6)
     {
-        for (int i = 0; i < 6; i++) 
+        for (int i = 0; i < index; i++) 
         {
             Console.Write("|");
             Thread.Sleep(100);

@@ -21,29 +21,52 @@ public class Reflect : Activity
 
     }
 
-    public void GetPrompt()
+    public string GetPrompt()
     {
         Random rand = new Random();
         int randomInt = rand.Next(0, _promptList.Length);
         string prompt = _promptList[randomInt];
-        _randPrompt = prompt;
+        return prompt;
     }
 
-    public void GetQuestion()
+    public string GetQuestion()
     {
         Random rand = new Random();
         int randomInt = rand.Next(0, _questionList.Length);
         string question = _questionList[randomInt];
-        _randQuestion = question;
+        return question;
     }
 
     public void DisplayQuestion()
     {
-        Console.WriteLine(_randPrompt);
+        Console.WriteLine(GetQuestion());
     }
 
     public void DisplayPrompt()
     {
-        Console.WriteLine(_randQuestion);
+        Console.WriteLine("Consider the following prompt: ");
+        Console.WriteLine(GetPrompt());
+    }
+
+    public void ReflectLoop()
+    {
+        Console.WriteLine("Get ready...");
+        LoadingAnimation();
+
+        DisplayPrompt();
+        Console.WriteLine();
+        Console.WriteLine("Please press any key when you have something in mind. ");
+        Console.ReadLine();
+
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(_activityDuration);
+
+        while (startTime < futureTime)
+        {
+            Console.WriteLine();
+            DisplayQuestion();
+            LoadingAnimation(10);
+            startTime = DateTime.Now;
+        }
     }
 }

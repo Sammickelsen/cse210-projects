@@ -28,6 +28,7 @@ class Program
             {
                 Reflect reflectActivity = new Reflect();
                 reflectActivity.StartMessage();
+                reflectActivity.ReflectLoop();
                 reflectActivity.EndMessage();
             }
             else if (response == "3")
