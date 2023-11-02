@@ -4,7 +4,7 @@ public class Reflect : Activity
      "Think of a time when you did something really difficult.",
      "Think of a time when you helped someone in need.",
       "Think of a time when you did something truly selfless."};
-    private string[] _questionList  = {"Why was this experience meaningful to you?",
+    private List<string> _questionList  = new List<string>{"Why was this experience meaningful to you?",
     "Have you ever done anything like this before?",
     "How did you get started?",
     "How did you feel when it was complete?",
@@ -32,8 +32,9 @@ public class Reflect : Activity
     public string GetQuestion()
     {
         Random rand = new Random();
-        int randomInt = rand.Next(0, _questionList.Length);
+        int randomInt = rand.Next(0, _questionList.Count);
         string question = _questionList[randomInt];
+        _questionList.RemoveAt(randomInt);
         return question;
     }
 
@@ -50,6 +51,7 @@ public class Reflect : Activity
 
     public void ReflectLoop()
     {
+        Console.Clear();
         Console.WriteLine("Get ready...");
         LoadingAnimation();
 

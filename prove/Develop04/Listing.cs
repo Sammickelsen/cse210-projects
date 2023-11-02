@@ -41,6 +41,7 @@ public class Listing : Activity
 
     public void ListLoop()
     {
+        Console.Clear();
         DisplayPrompt();
         Console.WriteLine();
         LoadingAnimation();

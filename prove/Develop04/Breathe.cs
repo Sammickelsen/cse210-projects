@@ -7,6 +7,7 @@ public class Breathe : Activity
 
     public void InOutLoop()
     {
+        Console.Clear();
         Console.WriteLine("Get ready...");
         LoadingAnimation();
 
