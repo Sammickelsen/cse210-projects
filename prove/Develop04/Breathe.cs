@@ -13,6 +13,7 @@ public class Breathe : Activity
 
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(_activityDuration);
+        float breathCountDown = (_activityDuration / 6) * 1000;
 
         while (startTime < futureTime)
         {
