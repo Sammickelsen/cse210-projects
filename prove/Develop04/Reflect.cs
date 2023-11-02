@@ -13,8 +13,6 @@ public class Reflect : Activity
     "What could you learn from this experience that applies to other situations?",
     "What did you learn about yourself through this experience?",
     "How can you keep this experience in mind in the future?"};
-    private string _randPrompt;
-    private string _randQuestion;
 
     public Reflect(string name = "Reflect", string desc = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.") : base(name, desc)
     {
@@ -52,12 +50,13 @@ public class Reflect : Activity
     public void ReflectLoop()
     {
         Console.Clear();
+        StartMessage();
+        Console.Clear();
         Console.WriteLine("Get ready...");
         LoadingAnimation();
 
         DisplayPrompt();
-        Console.WriteLine();
-        Console.WriteLine("Please press any key when you have something in mind. ");
+        Console.WriteLine("\nPlease press any key when you have something in mind. ");
         Console.ReadLine();
 
         DateTime startTime = DateTime.Now;
@@ -70,5 +69,7 @@ public class Reflect : Activity
             LoadingAnimation(10);
             startTime = DateTime.Now;
         }
+        EndMessage();
+
     }
 }

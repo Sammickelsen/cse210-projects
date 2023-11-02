@@ -20,23 +20,17 @@ class Program
             if (response == "1")
             {
                 Breathe breatheActivity = new Breathe();
-                breatheActivity.StartMessage();
                 breatheActivity.InOutLoop();
-                breatheActivity.EndMessage();
             }
             else if (response == "2")
             {
                 Reflect reflectActivity = new Reflect();
-                reflectActivity.StartMessage();
                 reflectActivity.ReflectLoop();
-                reflectActivity.EndMessage();
             }
             else if (response == "3")
             {
                 Listing listingActivity = new Listing();
-                listingActivity.StartMessage();
                 listingActivity.ListLoop();
-                listingActivity.EndMessage();
             }
             else if (response == "4")
             {

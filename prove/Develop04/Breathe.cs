@@ -6,14 +6,16 @@ public class Breathe : Activity
     }
 
     public void InOutLoop()
-    {
+    {   
+        Console.Clear();
+        StartMessage();
+
         Console.Clear();
         Console.WriteLine("Get ready...");
         LoadingAnimation();
 
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(_activityDuration);
-        float breathCountDown = (_activityDuration / 6) * 1000;
 
         while (startTime < futureTime)
         {
@@ -39,6 +41,7 @@ public class Breathe : Activity
             Console.WriteLine();
             startTime = DateTime.Now;
         }
-        
+
+        EndMessage();
     }
 }
