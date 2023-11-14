@@ -9,15 +9,20 @@ public class ChecklistGoal : Goal
         _timesComplete = 0;
     }
 
-    public override void IsComplete()
+    public override string IsComplete()
     {
         if (_timesComplete < _maxComplete)
         {
-            Console.WriteLine($"{_timesComplete}/{_maxComplete}");
+            return $"{_timesComplete}/{_maxComplete}";
         }
         else
         {
-            Console.WriteLine($"{_maxComplete}/{_maxComplete}");
+            return $"{_maxComplete}/{_maxComplete}";
         }
+    }
+
+    public override void DisplayGoal()
+    {
+        Console.WriteLine($"{_goalDescription} {IsComplete()}");
     }
 }

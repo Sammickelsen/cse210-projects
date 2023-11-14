@@ -6,15 +6,15 @@ public class EternalGoal : Goal
     { 
     }
 
-    public override void IsComplete()
+    public override string IsComplete()
     {
         if (_onceComplete == true)
         {
-            Console.WriteLine("{X}");
+            return "{X}";
         }
         else
         {
-            Console.WriteLine("{ }");
+            return "{ }";
         }
     }
 }

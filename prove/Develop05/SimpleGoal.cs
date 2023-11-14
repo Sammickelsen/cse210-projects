@@ -6,15 +6,15 @@ public class SimpleGoal : Goal
     {
     }
 
-    public override void IsComplete()
+    public override string IsComplete()
     {
         if (_complete == true)
         {
-            Console.WriteLine("{X}");
+            return "{X}";
         }
         else
         {
-            Console.WriteLine("{ }");
+            return "{ }";
         }
     }
 }
