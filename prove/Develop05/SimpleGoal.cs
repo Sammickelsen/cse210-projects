@@ -2,7 +2,7 @@ public class SimpleGoal : Goal
 {
     private bool _complete;
 
-    public SimpleGoal(string name, string description) : base(name, description)
+    public SimpleGoal(string description, string type = "SimpleGoal") : base(type, description)
     {
     }
 

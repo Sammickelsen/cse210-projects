@@ -2,7 +2,7 @@ public class EternalGoal : Goal
 {
     private bool _onceComplete;
 
-    public EternalGoal(string name, string description) : base(name, description)
+    public EternalGoal(string description, string type = "EternalGoal") : base(type, description)
     { 
     }
 
