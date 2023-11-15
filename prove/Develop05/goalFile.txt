@@ -1,0 +1,2 @@
+250
+SimpleGoal:Finish School|Graduate in two years|100|False

@@ -1,7 +1,7 @@
 public class UserInterface
 {
     public List<Goal> GoalList = new List<Goal>();
-    private int _totalPoints;
+    public int totalPoints;
     
     public UserInterface()
     {
@@ -16,11 +16,6 @@ public class UserInterface
         }
     }
 
-    public int DisplayPoints()
-    {
-        return _totalPoints;
-    }
-
     public void NewGoal()
     {
         Console.WriteLine("What type of goal would you like to make?");
@@ -30,29 +25,38 @@ public class UserInterface
 
         if (response == "1")
         {
-            Console.Write("Please type out your intended Eternal Goal: ");
+            Console.Write("Please type out the name of your intended goal: ");
+            string goalName = Console.ReadLine();
+
+            Console.Write("Please write a description of your goal: ");
             string goalDesc = Console.ReadLine();
 
-            EternalGoal newEternalGoal = new EternalGoal(goalDesc);
+            EternalGoal newEternalGoal = new EternalGoal(goalDesc, goalName);
             GoalList.Add(newEternalGoal);
         }
         else if (response == "2")
         {
-            Console.Write("Please type out your intended Simple Goal: ");
+            Console.Write("Please type out the name of your intended goal: ");
+            string goalName = Console.ReadLine();
+
+            Console.Write("Please write a description of your goal: ");
             string goalDesc = Console.ReadLine();
 
-            SimpleGoal newSimpleGoal = new SimpleGoal(goalDesc);
+            SimpleGoal newSimpleGoal = new SimpleGoal(goalDesc, goalName);
             GoalList.Add(newSimpleGoal);
         }
         else if (response == "3")
         {
-            Console.Write("Please type out your intended Checklist Goal: ");
+            Console.Write("Please type out the name of your intended goal: ");
+            string goalName = Console.ReadLine();
+
+            Console.Write("Please write a description of your goal: ");
             string goalDesc = Console.ReadLine();
 
-            Console.Write("Please type how many times you want to complete your Checklist Goal: ");
+            Console.Write("Please type how many times you want to complete your goal: ");
             int maxComplete = Int32.Parse(Console.ReadLine());
 
-            ChecklistGoal newChecklistGoal = new ChecklistGoal(goalDesc, maxComplete);
+            ChecklistGoal newChecklistGoal = new ChecklistGoal(goalDesc, goalName, maxComplete);
             GoalList.Add(newChecklistGoal);
         }
         else
@@ -60,4 +64,6 @@ public class UserInterface
             Console.WriteLine("Not a valid response.");
         }
     }
+
+
 }

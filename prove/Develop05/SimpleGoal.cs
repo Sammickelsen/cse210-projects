@@ -1,19 +1,32 @@
 public class SimpleGoal : Goal
 {
-    private int _timesCompleted;
+    private bool _isComplete;
 
-    public SimpleGoal(string description, string type = "SimpleGoal") : base(type, description)
+    public SimpleGoal(string description, string name, string type = "SimpleGoal", int points = 100, bool isComplete = false) : base(type, description, name, points)
     {
-        _timesCompleted = 0;
+        _isComplete = isComplete;
     }
 
     public override string IsComplete()
-    {
-        return $"{_timesCompleted}";
+    {   
+        if (_isComplete == false)
+        {
+            return "{ }";
+        }
+        else
+        {
+            return "{X}";
+        }
+        
     }
 
     public override void MarkDone()
     {
-        _timesCompleted += 1;
+        _isComplete = true;
+    }
+
+    public override string GoaltoString()
+    {
+        return base.GoaltoString() + $"|{_isComplete}";
     }
 }

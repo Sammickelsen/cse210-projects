@@ -3,10 +3,12 @@ public class ChecklistGoal : Goal
     private int _timesComplete;
     private int _maxComplete;
 
-    public ChecklistGoal(string description, int maxComplete, string type = "ChecklistGoal") : base(type, description)
+    private int _finishedPoints;
+
+    public ChecklistGoal(string description, string name, int maxComplete, int timesComplete = 0, string type = "ChecklistGoal", int points = 50, int finished = 500) : base(type, description, name, points)
     {
         _maxComplete = maxComplete;
-        _timesComplete = 0;
+        _timesComplete = timesComplete;
     }
 
     public override string IsComplete()
@@ -21,16 +23,16 @@ public class ChecklistGoal : Goal
         }
     }
 
-    public override void DisplayGoal()
-    {
-        Console.WriteLine($"{_goalDescription} {IsComplete()}");
-    }
-
     public override void MarkDone()
     {
         if (_timesComplete < _maxComplete)
         {
             _timesComplete += 1;
         }
+    }
+
+    public override string GoaltoString()
+    {
+        return base.GoaltoString() + $"|{_finishedPoints}|{_timesComplete}|{_maxComplete}";
     }
 }

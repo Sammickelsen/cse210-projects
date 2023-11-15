@@ -3,11 +3,14 @@ public class Goal
     private int _points;
     protected string _goalDescription;
     private string _goalType;
+    private string _goalName;
 
-    public Goal(string type, string description)
+    public Goal(string type, string description, string name, int points)
     {
         _goalType = type;
         _goalDescription = description;
+        _points = points;
+        _goalName = name;
     }
 
     public virtual string IsComplete()
@@ -17,10 +20,16 @@ public class Goal
     
     public virtual void DisplayGoal()
     {
-        Console.WriteLine($"{_goalDescription} {IsComplete()}");
+        Console.WriteLine($"{_goalName} ({_goalDescription}) {IsComplete()}");
     }
 
     public virtual void MarkDone()
     {
+    }
+    
+    public virtual string GoaltoString()
+    {
+        string goalString = $"{_goalType}:{_goalName}|{_goalDescription}|{_points}";
+        return goalString;
     }
 }
