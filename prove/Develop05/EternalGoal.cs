@@ -2,8 +2,9 @@ public class EternalGoal : Goal
 {
     private bool _onceComplete;
 
-    public EternalGoal(string description, string type = "EternalGoal") : base(type, description)
+    public EternalGoal(string description, string type = "EternalGoal", bool complete = false) : base(type, description)
     { 
+        _onceComplete = complete;
     }
 
     public override string IsComplete()
@@ -16,5 +17,10 @@ public class EternalGoal : Goal
         {
             return "{ }";
         }
+    }
+
+    public override void MarkDone()
+    {
+        _onceComplete = true;
     }
 }

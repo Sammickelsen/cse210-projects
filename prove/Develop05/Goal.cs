@@ -10,11 +10,6 @@ public class Goal
         _goalDescription = description;
     }
 
-    public void RecordEvent()
-    {
-
-    }
-
     public virtual string IsComplete()
     {
         return "";
@@ -23,5 +18,9 @@ public class Goal
     public virtual void DisplayGoal()
     {
         Console.WriteLine($"{_goalDescription} {IsComplete()}");
+    }
+
+    public virtual void MarkDone()
+    {
     }
 }

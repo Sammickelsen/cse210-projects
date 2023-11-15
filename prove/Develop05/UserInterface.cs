@@ -16,9 +16,9 @@ public class UserInterface
         }
     }
 
-    public void DisplayPoints()
+    public int DisplayPoints()
     {
-
+        return _totalPoints;
     }
 
     public void NewGoal()

@@ -25,4 +25,12 @@ public class ChecklistGoal : Goal
     {
         Console.WriteLine($"{_goalDescription} {IsComplete()}");
     }
+
+    public override void MarkDone()
+    {
+        if (_timesComplete < _maxComplete)
+        {
+            _timesComplete += 1;
+        }
+    }
 }
