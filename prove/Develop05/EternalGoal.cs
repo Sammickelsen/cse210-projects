@@ -10,7 +10,10 @@ public class EternalGoal : Goal
         return "{ }";
     }
 
-    public override void MarkDone()
+    public override int UpdatePoints()
     {
+        Console.WriteLine("Congradulations! You completed your goal!");
+        Console.WriteLine($"You got {_points} points!");
+        return base.UpdatePoints();
     }
 }

@@ -29,4 +29,19 @@ public class SimpleGoal : Goal
     {
         return base.GoaltoString() + $"|{_isComplete}";
     }
+
+    public override int UpdatePoints()
+    {
+        if (_isComplete == false)
+        {
+            Console.WriteLine("Congradulations!  You finished your goal!");
+            Console.WriteLine($"You got {_points} points!");
+            return base.UpdatePoints();
+        }
+        else
+        {
+            Console.WriteLine("Nice try, this goal is already finished.");
+            return 0;
+        }
+    }
 }

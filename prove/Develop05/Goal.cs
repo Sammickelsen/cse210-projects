@@ -1,6 +1,6 @@
 public class Goal
 {
-    private int _points;
+    protected int _points;
     protected string _goalDescription;
     private string _goalType;
     private string _goalName;
@@ -31,5 +31,15 @@ public class Goal
     {
         string goalString = $"{_goalType}:{_goalName}|{_goalDescription}|{_points}";
         return goalString;
+    }
+
+    public string GetName()
+    {
+        return _goalName;
+    }
+
+    public virtual int UpdatePoints()
+    {
+        return _points;
     }
 }

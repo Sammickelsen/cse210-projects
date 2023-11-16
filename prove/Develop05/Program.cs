@@ -44,7 +44,7 @@ class Program
             }
             else if(userInput == "5")
             {
-                Console.WriteLine("Updating...");
+                myUserInterface.UpdateGoal();
             }
             else if (userInput == "6")
             {

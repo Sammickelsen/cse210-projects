@@ -16,6 +16,24 @@ public class UserInterface
         }
     }
 
+    public void UpdateGoal()
+    {
+        Console.WriteLine("What goal would you like to mark done? (Type number)");
+        int i = 0;
+        foreach (Goal g in GoalList)
+        {
+            Console.WriteLine($"{i + 1}. {g.GetName()}");
+            i ++;
+        }
+        Console.Write("\n> ");
+        int userChoice = Int32.Parse(Console.ReadLine());
+
+        Console.WriteLine("Updating...\n\n");
+        totalPoints += GoalList[userChoice - 1].UpdatePoints();
+        GoalList[userChoice - 1].MarkDone();
+        
+    }
+
     public void NewGoal()
     {
         Console.WriteLine("What type of goal would you like to make?");

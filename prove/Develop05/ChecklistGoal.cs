@@ -35,4 +35,26 @@ public class ChecklistGoal : Goal
     {
         return base.GoaltoString() + $"|{_finishedPoints}|{_timesComplete}|{_maxComplete}";
     }
+
+    public override int UpdatePoints()
+    {
+        if (_timesComplete < _maxComplete)
+        {
+            Console.WriteLine("Congradulations! You are one step closer to finishing your goal!");
+            Console.WriteLine($"You got {_points} points! Keep going!");
+            return base.UpdatePoints();
+        }
+        else if (_timesComplete == _maxComplete - 1)
+        {
+            Console.WriteLine("Congradulations!  You finished your goal!");
+            Console.WriteLine($"You got {_finishedPoints} points!");
+            return _finishedPoints;
+        }
+        else
+        {
+            Console.WriteLine("Nice try, this goal is already finished.");
+            return 0;
+        }
+        
+    }
 }
