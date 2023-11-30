@@ -29,7 +29,7 @@ class Program
             // Plan meals for the week
             else if (choice == "3")
             {
-                
+                userInterface.PlanCalendar();
             }
             // Save current plan to file
             else if (choice == "4")

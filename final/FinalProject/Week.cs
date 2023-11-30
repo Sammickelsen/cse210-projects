@@ -6,7 +6,7 @@ public class Week
     public Week(string name = "Week 1")
     {
         weekName = name;
-        
+
         Day sunday = new Day("Sunday");
         Day monday = new Day("Monday");
         Day tuesday = new Day("Tuesday");
@@ -30,5 +30,32 @@ public class Week
         {
             d.DisplayDay();
         }
+    }
+
+    public void PlanWeek(List<Meal> breakfasts, List<Meal> lunches, List<Meal> dinners)
+    {
+        bool planLoop = true;
+        do
+        {
+            Console.Clear();
+            Console.WriteLine("Choose a day to edit. \nWhen you are done, type 0.\n");
+            int i = 1;
+            foreach (Day d in week)
+            {
+                Console.WriteLine($"{i}. {d.dayName}");
+                i++;
+            }
+
+            Console.Write("\n> ");
+            int choice = Int32.Parse(Console.ReadLine());
+            if (choice == 0)
+            {
+                planLoop = false;
+            }
+            else if (choice <= 7)
+            {
+                week[choice - 1].PlanDay(breakfasts, lunches, dinners);
+            }
+        } while (planLoop == true);
     }
 }

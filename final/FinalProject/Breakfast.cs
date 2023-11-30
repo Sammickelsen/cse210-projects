@@ -1,6 +1,6 @@
 public class Breakfast : Meal
 {
-    public Breakfast(string mealName, List<string> ingredients): base(mealName, ingredients)
+    public Breakfast(string mealName, List<string> ingredients, string mealType): base(mealName, ingredients, mealType)
     {
 
     }
