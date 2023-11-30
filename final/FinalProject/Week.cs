@@ -1,9 +1,12 @@
 public class Week
 {
     public List<Day> week = new List<Day>();
+    public string weekName;
 
-    public Week()
+    public Week(string name = "Week 1")
     {
+        weekName = name;
+        
         Day sunday = new Day("Sunday");
         Day monday = new Day("Monday");
         Day tuesday = new Day("Tuesday");

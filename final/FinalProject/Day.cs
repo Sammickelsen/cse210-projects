@@ -14,28 +14,48 @@ public class Day
     public void DisplayDay()
     {
         Console.WriteLine($"{_dayName}: ");
-        Console.WriteLine($"Breakfast: ");
+        Console.Write($"   Breakfast: ");
         GetBreakfast();
-        Console.WriteLine("Lunch: ");
+        Console.Write("   Lunch: ");
         GetLunch();
-        Console.WriteLine("Dinner: ");
+        Console.Write("   Dinner: ");
         GetDinner();
         Console.WriteLine();
 
     }
 
     public void GetBreakfast()
-    {
-        _breakfast.DisplayMeal();
+    {   if (_breakfast != null)
+        {
+            _breakfast.DisplayMeal();
+        }
+        else
+        {
+            Console.WriteLine("Not assigned");
+        }
     }
 
     public void GetLunch()
     {
-        _lunch.DisplayMeal();
+        if (_lunch != null)
+        {
+            _lunch.DisplayMeal();
+        }
+        else
+        {
+            Console.WriteLine("Not assigned");
+        }
     }
 
     public void GetDinner()
     {
-        _dinner.DisplayMeal();
+        if (_dinner != null)
+        {
+            _dinner.DisplayMeal();
+        }
+        else
+        {
+            Console.WriteLine("Not assigned");
+        }
     }
 }
