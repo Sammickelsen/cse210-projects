@@ -14,9 +14,9 @@ public class Day
     public void DisplayDay()
     {
         Console.WriteLine($"{dayName}: ");
-        Console.Write($"   Breakfast: {breakfast}");
-        Console.Write($"   Lunch: {lunch}");
-        Console.Write($"   Dinner: {dinner}");
+        Console.WriteLine($"   Breakfast: {breakfast}");
+        Console.WriteLine($"   Lunch: {lunch}");
+        Console.WriteLine($"   Dinner: {dinner}");
         Console.WriteLine();
 
     }

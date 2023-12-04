@@ -26,13 +26,19 @@ public class Meal
         Console.WriteLine($"{_mealName}");
     }
 
+    public string GetMealName()
+    {
+        return _mealName;
+    }
+
     public string DisplayIngredients()
     {
         string ingredients = "";
-        foreach (String ing in _ingredients)
+        foreach (string ing in _ingredients)
         {
-            ingredients += $",{ing}";
+            ingredients += $"{ing},";
         }
+        Console.WriteLine(ingredients);
         return ingredients;
     }
 

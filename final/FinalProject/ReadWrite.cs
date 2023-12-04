@@ -24,17 +24,23 @@ public class ReadWrite
         {
             foreach (Meal b in breakfasts)
             {
-                string outputString = $"{b.DisplayMeal}|{b.DisplayIngredients}|{b.GetMealType}";
-                
+                string name = b.GetMealName();
+                string type = b.GetMealType();
+                string ingredients = b.DisplayIngredients();
+                string outputString = $"{name}|{ingredients}|{type}";
+                outputFile.WriteLine(outputString);
             }
         }
 
         using (StreamWriter outputFile = new StreamWriter(fileBase + "Lunches.txt"))
         {
             foreach (Meal l in lunch)
-            {
-                string outputString = $"{l.DisplayMeal}|{l.DisplayIngredients}|{l.GetMealType}";
-                
+            {  
+                string name = l.GetMealName();
+                string type = l.GetMealType();
+                string ingredients = l.DisplayIngredients();
+                string outputString = $"{name}|{ingredients}|{type}";
+                outputFile.WriteLine(outputString);
             }
         }
 
@@ -42,14 +48,23 @@ public class ReadWrite
         {
             foreach (Meal d in dinner)
             {
-                string outputString = $"{d.DisplayMeal}|{d.DisplayIngredients}|{d.GetMealType}";
-                
+                string name = d.GetMealName();
+                string type = d.GetMealType();
+                string ingredients = d.DisplayIngredients();
+                string outputString = $"{name}|{ingredients}|{type}";
+                outputFile.WriteLine(outputString);
             }
         }
     }
 
     public void ReadFiles()
     {
+        Console.Write("Please name the file you want to load to (Without .txt): ");
+        string fileBase = Console.ReadLine();
 
+        string[] calendarLines = System.IO.File.ReadAllLines(fileBase + "Calendar.txt");
+        string[] breakfastLines = System.IO.File.ReadAllLines(fileBase + "Breakfasts.txt");
+        string[] lunchLines = System.IO.File.ReadAllLines(fileBase + "Lunches.txt");
+        string[] dinnerLines = System.IO.File.ReadAllLines(fileBase + "Dinners.txt");
     }
 }
