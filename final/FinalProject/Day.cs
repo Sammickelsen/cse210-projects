@@ -1,9 +1,9 @@
 public class Day
 {
     public string dayName;
-    private Meal _breakfast;
-    private Meal _lunch;
-    private Meal _dinner;
+    public string breakfast;
+    public string lunch;
+    public string dinner;
 
     
     public Day(string day)
@@ -14,49 +14,11 @@ public class Day
     public void DisplayDay()
     {
         Console.WriteLine($"{dayName}: ");
-        Console.Write("   Breakfast: ");
-        GetBreakfast();
-        Console.Write("   Lunch: ");
-        GetLunch();
-        Console.Write("   Dinner: ");
-        GetDinner();
+        Console.Write($"   Breakfast: {breakfast}");
+        Console.Write($"   Lunch: {lunch}");
+        Console.Write($"   Dinner: {dinner}");
         Console.WriteLine();
 
-    }
-
-    public void GetBreakfast()
-    {   if (_breakfast != null)
-        {
-            _breakfast.DisplayMeal();
-        }
-        else
-        {
-            Console.WriteLine("Not assigned");
-        }
-    }
-
-    public void GetLunch()
-    {
-        if (_lunch != null)
-        {
-            _lunch.DisplayMeal();
-        }
-        else
-        {
-            Console.WriteLine("Not assigned");
-        }
-    }
-
-    public void GetDinner()
-    {
-        if (_dinner != null)
-        {
-            _dinner.DisplayMeal();
-        }
-        else
-        {
-            Console.WriteLine("Not assigned");
-        }
     }
 
     public void PlanDay(List<Meal> breakfasts, List<Meal> lunches, List<Meal> dinners)
@@ -102,7 +64,7 @@ public class Day
 
             if (input < lunches.Count + 1)
             {
-                SetBreakfast(lunches[input - 1]);
+                SetLunch(lunches[input - 1]);
             }
         }
         else if (userInput == "3")
@@ -120,7 +82,7 @@ public class Day
 
             if (input < dinners.Count + 1)
             {
-                SetBreakfast(dinners[input - 1]);
+                SetDinner(dinners[input - 1]);
             }
         }
         else if (userInput == "4")
@@ -137,18 +99,18 @@ public class Day
 
     }
 
-    public void SetBreakfast(Meal breakfast)
+    public void SetBreakfast(Meal bf)
     {
-        _breakfast = breakfast;
+        breakfast = bf.GetName();
     }
 
-    public void SetLunch(Meal lunch)
+    public void SetLunch(Meal lun)
     {
-        _lunch = lunch;
+        lunch = lun.GetName();
     }
 
-    public void SetDinner(Meal dinner)
+    public void SetDinner(Meal din)
     {
-        _dinner = dinner;
+        dinner = din.GetName();
     }
 }

@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         UserInterface userInterface = new UserInterface();
+        ReadWrite readWrite = new ReadWrite();
         bool loopControl = true;
 
         do
@@ -34,7 +35,7 @@ class Program
             // Save current plan to file
             else if (choice == "4")
             {
-                
+                readWrite.WriteFiles(userInterface.Calendar[0].week, userInterface.breakfastOptions, userInterface.lunchOptions, userInterface.dinnerOptions);
             }
             // Load plan from a file
             else if (choice == "5")

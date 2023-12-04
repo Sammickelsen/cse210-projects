@@ -1,0 +1,7 @@
+Sunday|,,
+Monday|Pizza,,
+Tuesday|,,
+Wednesday|,,
+Thursday|,,
+Friday|,,
+Saturday|,,

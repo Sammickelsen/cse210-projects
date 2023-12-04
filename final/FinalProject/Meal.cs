@@ -25,4 +25,19 @@ public class Meal
     {
         Console.WriteLine($"{_mealName}");
     }
+
+    public string DisplayIngredients()
+    {
+        string ingredients = "";
+        foreach (String ing in _ingredients)
+        {
+            ingredients += $",{ing}";
+        }
+        return ingredients;
+    }
+
+    public string GetMealType()
+    {
+        return _mealType;
+    }
 }
