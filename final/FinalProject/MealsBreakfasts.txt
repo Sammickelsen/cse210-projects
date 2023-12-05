@@ -1,0 +1,3 @@
+Pancakes|Flour,Sugar,Eggs,Oil,Milk,Baking Soda,|breakfast
+Scrambled Eggs|Salt,Pepper,Butter,Eggs,|breakfast
+Cinnamon Rolls|Flour,Brown Sugar,Butter,Oil,Yeast,Eggs,Cinnamon,|breakfast

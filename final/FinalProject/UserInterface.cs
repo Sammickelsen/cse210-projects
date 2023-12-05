@@ -65,21 +65,49 @@ public class UserInterface
 
             if (type == "1")
             {
-                Meal meal = new Meal(name, ingredients, "breakFast");
+                Meal meal = new Meal(name, ingredients, "breakfast");
                 breakfastOptions.Add(meal);
                 controlLoop = false;
+
+                using (StreamWriter outputFile = new StreamWriter("MealsBreakfasts.txt", true))
+                {
+                    string mealName = meal.GetMealName();
+                    string mealType = meal.GetMealType();
+                    string ingredientList = meal.DisplayIngredients();
+                    string outputString = $"{mealName}|{ingredientList}|{mealType}";
+                    outputFile.WriteLine(outputString);
+                }
             }
             else if (type == "2")
             {
                 Meal meal = new Meal(name, ingredients, "lunch");
                 lunchOptions.Add(meal);
                 controlLoop = false;
+
+                using (StreamWriter outputFile = new StreamWriter("MealsLunches.txt", true))
+                {
+                    string mealName = meal.GetMealName();
+                    string mealType = meal.GetMealType();
+                    string ingredientList = meal.DisplayIngredients();
+                    string outputString = $"{mealName}|{ingredientList}|{mealType}";
+                    outputFile.WriteLine(outputString);
+                }
             }
             else if (type == "3")
             {
                 Meal meal = new Meal(name, ingredients, "dinner");
                 dinnerOptions.Add(meal);
                 controlLoop = false;
+
+                using (StreamWriter outputFile = new StreamWriter("MealsDinners.txt", true))
+                {
+                    string mealName = meal.GetMealName();
+                    string mealType = meal.GetMealType();
+                    string ingredientList = meal.DisplayIngredients();
+                    string outputString = $"{mealName}|{ingredientList}|{mealType}";
+                    outputFile.WriteLine(outputString);
+                }
+        
             }
             else
             {

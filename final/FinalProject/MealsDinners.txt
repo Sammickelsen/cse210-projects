@@ -1,1 +1,1 @@
-Fish|,Lemon Pepper,Salmon,Butter,Lemon Juice|dinner
+Fish|Salmon,Lemon Pepper,Lemon Juice,Butter,|dinner

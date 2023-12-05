@@ -35,11 +35,20 @@ class Program
             // Save current plan to file
             else if (choice == "4")
             {
-                readWrite.WriteFiles(userInterface.Calendar[0].week, userInterface.breakfastOptions, userInterface.lunchOptions, userInterface.dinnerOptions);
+                readWrite.WriteFiles(userInterface.Calendar[0].week);
             }
             // Load plan from a file
             else if (choice == "5")
             {
+                userInterface.Calendar.Clear();
+                Week week = new Week();
+                week.week.Clear();
+                week.week = readWrite.ReadCalendar();
+                userInterface.Calendar.Add(week);
+
+                userInterface.breakfastOptions = readWrite.ReadBreakfast();
+                userInterface.lunchOptions = readWrite.ReadLunch();
+                userInterface.dinnerOptions = readWrite.ReadDinner();
 
             }
             // Exit program
